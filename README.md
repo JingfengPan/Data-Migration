@@ -1,6 +1,9 @@
 Classifiers are in the classifiers folder.
 Online clustering is in the kprototypes folder.
-There are "main.py" files in both folders, which are the running programs.
-The "calculate_throughput.py" file can calculate the throughput of the program.
 All the results are using column-wise compression.
-When running the "incremental_k_prototypes.py" program, it will eat more than 10G RAM, which may cause the program to crash.
+For the k-prototypes, just run the "main.py" file.
+For the classifiers: 
+1. Run the "k_prototypes.py" file to label the dataset.
+2. Run the "classifiers.py" file to train and test the classifiers, as well as record the results.
+3. Run the "main.py" file to compress the dataset and record the results.
+4. Run the "calculate_throughput.py" file and "cost_model.py" file to calculate the throughput and cost seperately. And then draw the figures.
