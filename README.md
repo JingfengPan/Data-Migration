@@ -8,7 +8,7 @@ The logical process of the program:
 
 All the original test data is stored in the "test_data" folder, all the data that generated during the process will be temporarily stored in the "data" folder, and will be deleted automatically after using.
 All the results will be output as a .txt file in the "results" folder.
-Just need to run the "main.py" since all functions are intergrated into it, and all the variable parameters are listed at the top of the main() function.
+Just need to run the "main.py" since all functions are integrated into it, and all the variable parameters are listed at the top of the main() function.
 The "draw_figures.py" hasn't been fully implemented yet.
 
 Please note that I am using njit from numba to speed up the "incremental_k_prototypes.py", which only support up to Python 3.9.
