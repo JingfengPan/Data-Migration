@@ -1,0 +1,75 @@
+Clusters: 5
+gzip
+Compression time: 8.93604 s, Compression ratio: 4.49228
+Network speed: 10 MB/s
+Throughput: 6.59894 MB/s
+Network speed: 20 MB/s
+Throughput: 6.59894 MB/s
+Cost: $ 17.17180 /TB
+
+lz4
+Compression time: 0.23949 s, Compression ratio: 2.24797
+Network speed: 10 MB/s
+Throughput: 6.59894 MB/s
+Network speed: 20 MB/s
+Throughput: 6.59894 MB/s
+Cost: $ 27.05461 /TB
+
+zstd
+Compression time: 0.33754 s, Compression ratio: 3.97878
+Network speed: 10 MB/s
+Throughput: 6.59894 MB/s
+Network speed: 20 MB/s
+Throughput: 6.59894 MB/s
+Cost: $ 17.16366 /TB
+
+Clusters: 10
+gzip
+Compression time: 8.10279 s, Compression ratio: 4.48620
+Network speed: 10 MB/s
+Throughput: 4.04331 MB/s
+Network speed: 20 MB/s
+Throughput: 4.04331 MB/s
+Cost: $ 19.72221 /TB
+
+lz4
+Compression time: 0.22464 s, Compression ratio: 2.24998
+Network speed: 10 MB/s
+Throughput: 4.04331 MB/s
+Network speed: 20 MB/s
+Throughput: 4.04331 MB/s
+Cost: $ 29.71002 /TB
+
+zstd
+Compression time: 0.32749 s, Compression ratio: 3.96509
+Network speed: 10 MB/s
+Throughput: 4.04331 MB/s
+Network speed: 20 MB/s
+Throughput: 4.04331 MB/s
+Cost: $ 19.88466 /TB
+
+Clusters: 15
+gzip
+Compression time: 8.21835 s, Compression ratio: 4.48039
+Network speed: 10 MB/s
+Throughput: 2.74165 MB/s
+Network speed: 20 MB/s
+Throughput: 2.74165 MB/s
+Cost: $ 23.04024 /TB
+
+lz4
+Compression time: 0.23545 s, Compression ratio: 2.24898
+Network speed: 10 MB/s
+Throughput: 2.74165 MB/s
+Network speed: 20 MB/s
+Throughput: 2.74165 MB/s
+Cost: $ 33.00539 /TB
+
+zstd
+Compression time: 0.31701 s, Compression ratio: 3.96330
+Network speed: 10 MB/s
+Throughput: 2.74165 MB/s
+Network speed: 20 MB/s
+Throughput: 2.74165 MB/s
+Cost: $ 23.17203 /TB
+

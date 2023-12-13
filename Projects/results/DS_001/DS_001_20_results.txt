@@ -1,0 +1,749 @@
+DS_001
+Clustering time: 28.63611 s
+
+gzip
+Compression time: 4.02616 s, Compression ratio: 3.38817
+Network speed: 5 MB/sThroughput: 5.41829 MB/s
+Network speed: 10 MB/sThroughput: 5.41829 MB/s
+Network speed: 15 MB/sThroughput: 5.41829 MB/s
+Network speed: 20 MB/sThroughput: 5.41829 MB/s
+Cost: $ 71.14365 /TB
+
+lz4
+Compression time: 0.15206 s, Compression ratio: 2.01414
+Network speed: 5 MB/sThroughput: 5.41829 MB/s
+Network speed: 10 MB/sThroughput: 5.41829 MB/s
+Network speed: 15 MB/sThroughput: 5.41829 MB/s
+Network speed: 20 MB/sThroughput: 5.41829 MB/s
+Cost: $ 61.64953 /TB
+
+zstd
+Compression time: 0.23056 s, Compression ratio: 6.28336
+Network speed: 5 MB/sThroughput: 5.41829 MB/s
+Network speed: 10 MB/sThroughput: 5.41829 MB/s
+Network speed: 15 MB/sThroughput: 5.41829 MB/s
+Network speed: 20 MB/sThroughput: 5.41829 MB/s
+Cost: $ 83.88744 /TB
+
+Random split time: 0.06257 s
+
+gzip
+Compression time: 3.92102 s, Compression ratio: 3.08632
+Network speed: 5 MB/sThroughput: 15.43160 MB/s
+Network speed: 10 MB/sThroughput: 30.86320 MB/s
+Network speed: 15 MB/sThroughput: 39.57096 MB/s
+Network speed: 20 MB/sThroughput: 39.57096 MB/s
+Cost: $ 53.41569 /TB
+
+lz4
+Compression time: 0.18573 s, Compression ratio: 1.78998
+Network speed: 5 MB/sThroughput: 8.94992 MB/s
+Network speed: 10 MB/sThroughput: 17.89984 MB/s
+Network speed: 15 MB/sThroughput: 26.84975 MB/s
+Network speed: 20 MB/sThroughput: 35.79967 MB/s
+Cost: $ 51.28010 /TB
+
+zstd
+Compression time: 0.24857 s, Compression ratio: 2.93787
+Network speed: 5 MB/sThroughput: 14.68933 MB/s
+Network speed: 10 MB/sThroughput: 29.37866 MB/s
+Network speed: 15 MB/sThroughput: 44.06799 MB/s
+Network speed: 20 MB/sThroughput: 58.75732 MB/s
+Cost: $ 51.36473 /TB
+
+no_overlap | 90.0% | DecisionTree
+Accuracy: 0.70921
+Training time: 5.19657 s
+Testing time: 2.64405 s
+
+gzip
+Compression time: 1.73603 s, Compression ratio: 3.22568
+Network speed: 5 MB/sThroughput: 5.94399 MB/s
+Network speed: 10 MB/sThroughput: 5.94399 MB/s
+Network speed: 15 MB/sThroughput: 5.94399 MB/s
+Network speed: 20 MB/sThroughput: 5.94399 MB/s
+Cost: $ 76.33758 /TB
+
+lz4
+Compression time: 0.11681 s, Compression ratio: 1.86104
+Network speed: 5 MB/sThroughput: 5.94399 MB/s
+Network speed: 10 MB/sThroughput: 5.94399 MB/s
+Network speed: 15 MB/sThroughput: 5.94399 MB/s
+Network speed: 20 MB/sThroughput: 5.94399 MB/s
+Cost: $ 60.34161 /TB
+
+zstd
+Compression time: 0.06896 s, Compression ratio: 3.09928
+Network speed: 5 MB/sThroughput: 5.94399 MB/s
+Network speed: 10 MB/sThroughput: 5.94399 MB/s
+Network speed: 15 MB/sThroughput: 5.94399 MB/s
+Network speed: 20 MB/sThroughput: 5.94399 MB/s
+Cost: $ 66.16004 /TB
+
+no_overlap | 90.0% | RandomForest
+Accuracy: 0.75267
+Training time: 75.17184 s
+Testing time: 2.81857 s
+
+gzip
+Compression time: 1.75680 s, Compression ratio: 3.23442
+Network speed: 5 MB/sThroughput: 5.57596 MB/s
+Network speed: 10 MB/sThroughput: 5.57596 MB/s
+Network speed: 15 MB/sThroughput: 5.57596 MB/s
+Network speed: 20 MB/sThroughput: 5.57596 MB/s
+Cost: $ 77.52951 /TB
+
+lz4
+Compression time: 0.05698 s, Compression ratio: 1.86352
+Network speed: 5 MB/sThroughput: 5.57596 MB/s
+Network speed: 10 MB/sThroughput: 5.57596 MB/s
+Network speed: 15 MB/sThroughput: 5.57596 MB/s
+Network speed: 20 MB/sThroughput: 5.57596 MB/s
+Cost: $ 60.73399 /TB
+
+zstd
+Compression time: 0.07101 s, Compression ratio: 3.10034
+Network speed: 5 MB/sThroughput: 5.57596 MB/s
+Network speed: 10 MB/sThroughput: 5.57596 MB/s
+Network speed: 15 MB/sThroughput: 5.57596 MB/s
+Network speed: 20 MB/sThroughput: 5.57596 MB/s
+Cost: $ 67.13911 /TB
+
+no_overlap | 90.0% | AdaBoost
+Accuracy: 0.65746
+Training time: 228.15256 s
+Testing time: 3.43216 s
+
+gzip
+Compression time: 1.75464 s, Compression ratio: 3.22275
+Network speed: 5 MB/sThroughput: 4.57910 MB/s
+Network speed: 10 MB/sThroughput: 4.57910 MB/s
+Network speed: 15 MB/sThroughput: 4.57910 MB/s
+Network speed: 20 MB/sThroughput: 4.57910 MB/s
+Cost: $ 80.94046 /TB
+
+lz4
+Compression time: 0.06177 s, Compression ratio: 1.86000
+Network speed: 5 MB/sThroughput: 4.57910 MB/s
+Network speed: 10 MB/sThroughput: 4.57910 MB/s
+Network speed: 15 MB/sThroughput: 4.57910 MB/s
+Network speed: 20 MB/sThroughput: 4.57910 MB/s
+Cost: $ 62.76240 /TB
+
+zstd
+Compression time: 0.06952 s, Compression ratio: 3.09632
+Network speed: 5 MB/sThroughput: 4.57910 MB/s
+Network speed: 10 MB/sThroughput: 4.57910 MB/s
+Network speed: 15 MB/sThroughput: 4.57910 MB/s
+Network speed: 20 MB/sThroughput: 4.57910 MB/s
+Cost: $ 70.49050 /TB
+
+no_overlap | 90.0% | QDA
+Accuracy: 0.75744
+Training time: 0.35943 s
+Testing time: 2.02295 s
+
+gzip
+Compression time: 1.71963 s, Compression ratio: 3.23741
+Network speed: 5 MB/sThroughput: 7.76895 MB/s
+Network speed: 10 MB/sThroughput: 7.76895 MB/s
+Network speed: 15 MB/sThroughput: 7.76895 MB/s
+Network speed: 20 MB/sThroughput: 7.76895 MB/s
+Cost: $ 72.75705 /TB
+
+lz4
+Compression time: 0.06551 s, Compression ratio: 1.86392
+Network speed: 5 MB/sThroughput: 7.76895 MB/s
+Network speed: 10 MB/sThroughput: 7.76895 MB/s
+Network speed: 15 MB/sThroughput: 7.76895 MB/s
+Network speed: 20 MB/sThroughput: 7.76895 MB/s
+Cost: $ 58.12590 /TB
+
+zstd
+Compression time: 0.07104 s, Compression ratio: 3.09772
+Network speed: 5 MB/sThroughput: 7.76895 MB/s
+Network speed: 10 MB/sThroughput: 7.76895 MB/s
+Network speed: 15 MB/sThroughput: 7.76895 MB/s
+Network speed: 20 MB/sThroughput: 7.76895 MB/s
+Cost: $ 62.74083 /TB
+
+no_overlap | 90.0% | MLP
+Accuracy: 0.76126
+Training time: 83.74908 s
+Testing time: 1.95672 s
+
+gzip
+Compression time: 1.71585 s, Compression ratio: 3.23716
+Network speed: 5 MB/sThroughput: 8.03190 MB/s
+Network speed: 10 MB/sThroughput: 8.03190 MB/s
+Network speed: 15 MB/sThroughput: 8.03190 MB/s
+Network speed: 20 MB/sThroughput: 8.03190 MB/s
+Cost: $ 72.35220 /TB
+
+lz4
+Compression time: 0.07004 s, Compression ratio: 1.86366
+Network speed: 5 MB/sThroughput: 8.03190 MB/s
+Network speed: 10 MB/sThroughput: 8.03190 MB/s
+Network speed: 15 MB/sThroughput: 8.03190 MB/s
+Network speed: 20 MB/sThroughput: 8.03190 MB/s
+Cost: $ 57.92031 /TB
+
+zstd
+Compression time: 0.07151 s, Compression ratio: 3.09615
+Network speed: 5 MB/sThroughput: 8.03190 MB/s
+Network speed: 10 MB/sThroughput: 8.03190 MB/s
+Network speed: 15 MB/sThroughput: 8.03190 MB/s
+Network speed: 20 MB/sThroughput: 8.03190 MB/s
+Cost: $ 62.37274 /TB
+
+no_overlap | 90.0% | GaussianNB
+Accuracy: 0.75663
+Training time: 0.34973 s
+Testing time: 1.88869 s
+
+gzip
+Compression time: 1.70865 s, Compression ratio: 3.23678
+Network speed: 5 MB/sThroughput: 8.32124 MB/s
+Network speed: 10 MB/sThroughput: 8.32124 MB/s
+Network speed: 15 MB/sThroughput: 8.32124 MB/s
+Network speed: 20 MB/sThroughput: 8.32124 MB/s
+Cost: $ 71.91643 /TB
+
+lz4
+Compression time: 0.07102 s, Compression ratio: 1.86435
+Network speed: 5 MB/sThroughput: 8.32124 MB/s
+Network speed: 10 MB/sThroughput: 8.32124 MB/s
+Network speed: 15 MB/sThroughput: 8.32124 MB/s
+Network speed: 20 MB/sThroughput: 8.32124 MB/s
+Cost: $ 57.70037 /TB
+
+zstd
+Compression time: 0.07210 s, Compression ratio: 3.10939
+Network speed: 5 MB/sThroughput: 8.32124 MB/s
+Network speed: 10 MB/sThroughput: 8.32124 MB/s
+Network speed: 15 MB/sThroughput: 8.32124 MB/s
+Network speed: 20 MB/sThroughput: 8.32124 MB/s
+Cost: $ 62.04740 /TB
+
+no_overlap | 90.0% | KNN
+Accuracy: 0.72109
+Training time: 1.68196 s
+Testing time: 2.78861 s
+
+gzip
+Compression time: 1.73453 s, Compression ratio: 3.22906
+Network speed: 5 MB/sThroughput: 5.63585 MB/s
+Network speed: 10 MB/sThroughput: 5.63585 MB/s
+Network speed: 15 MB/sThroughput: 5.63585 MB/s
+Network speed: 20 MB/sThroughput: 5.63585 MB/s
+Cost: $ 77.18591 /TB
+
+lz4
+Compression time: 0.05898 s, Compression ratio: 1.86237
+Network speed: 5 MB/sThroughput: 5.63585 MB/s
+Network speed: 10 MB/sThroughput: 5.63585 MB/s
+Network speed: 15 MB/sThroughput: 5.63585 MB/s
+Network speed: 20 MB/sThroughput: 5.63585 MB/s
+Cost: $ 60.63552 /TB
+
+zstd
+Compression time: 0.07376 s, Compression ratio: 3.11245
+Network speed: 5 MB/sThroughput: 5.63585 MB/s
+Network speed: 10 MB/sThroughput: 5.63585 MB/s
+Network speed: 15 MB/sThroughput: 5.63585 MB/s
+Network speed: 20 MB/sThroughput: 5.63585 MB/s
+Cost: $ 67.05075 /TB
+
+no_overlap | 90.0% | LogisticRegression
+Accuracy: 0.75363
+Training time: 47.12011 s
+Testing time: 1.96024 s
+
+gzip
+Compression time: 1.74151 s, Compression ratio: 3.23552
+Network speed: 5 MB/sThroughput: 8.01749 MB/s
+Network speed: 10 MB/sThroughput: 8.01749 MB/s
+Network speed: 15 MB/sThroughput: 8.01749 MB/s
+Network speed: 20 MB/sThroughput: 8.01749 MB/s
+Cost: $ 72.50945 /TB
+
+lz4
+Compression time: 0.06161 s, Compression ratio: 1.86440
+Network speed: 5 MB/sThroughput: 8.01749 MB/s
+Network speed: 10 MB/sThroughput: 8.01749 MB/s
+Network speed: 15 MB/sThroughput: 8.01749 MB/s
+Network speed: 20 MB/sThroughput: 8.01749 MB/s
+Cost: $ 57.90669 /TB
+
+zstd
+Compression time: 0.08642 s, Compression ratio: 3.08083
+Network speed: 5 MB/sThroughput: 8.01749 MB/s
+Network speed: 10 MB/sThroughput: 8.01749 MB/s
+Network speed: 15 MB/sThroughput: 8.01749 MB/s
+Network speed: 20 MB/sThroughput: 8.01749 MB/s
+Cost: $ 62.41846 /TB
+
+insert | 90.0% | DecisionTree
+Accuracy: 0.80736
+Training time: 4.80178 s
+Testing time: 9.92223 s
+
+gzip
+Compression time: 4.77339 s, Compression ratio: 3.40313
+Network speed: 5 MB/sThroughput: 15.63747 MB/s
+Network speed: 10 MB/sThroughput: 15.63747 MB/s
+Network speed: 15 MB/sThroughput: 15.63747 MB/s
+Network speed: 20 MB/sThroughput: 15.63747 MB/s
+Cost: $ 60.21278 /TB
+
+lz4
+Compression time: 0.16284 s, Compression ratio: 2.03463
+Network speed: 5 MB/sThroughput: 10.17317 MB/s
+Network speed: 10 MB/sThroughput: 15.63747 MB/s
+Network speed: 15 MB/sThroughput: 15.63747 MB/s
+Network speed: 20 MB/sThroughput: 15.63747 MB/s
+Cost: $ 54.89793 /TB
+
+zstd
+Compression time: 0.19981 s, Compression ratio: 8.49277
+Network speed: 5 MB/sThroughput: 15.63747 MB/s
+Network speed: 10 MB/sThroughput: 15.63747 MB/s
+Network speed: 15 MB/sThroughput: 15.63747 MB/s
+Network speed: 20 MB/sThroughput: 15.63747 MB/s
+Cost: $ 66.69209 /TB
+
+insert | 90.0% | RandomForest
+Accuracy: 0.76157
+Training time: 73.95528 s
+Testing time: 11.14522 s
+
+gzip
+Compression time: 4.57754 s, Compression ratio: 3.40763
+Network speed: 5 MB/sThroughput: 13.92155 MB/s
+Network speed: 10 MB/sThroughput: 13.92155 MB/s
+Network speed: 15 MB/sThroughput: 13.92155 MB/s
+Network speed: 20 MB/sThroughput: 13.92155 MB/s
+Cost: $ 60.85547 /TB
+
+lz4
+Compression time: 0.15214 s, Compression ratio: 2.03803
+Network speed: 5 MB/sThroughput: 10.19013 MB/s
+Network speed: 10 MB/sThroughput: 13.92155 MB/s
+Network speed: 15 MB/sThroughput: 13.92155 MB/s
+Network speed: 20 MB/sThroughput: 13.92155 MB/s
+Cost: $ 55.34934 /TB
+
+zstd
+Compression time: 0.19206 s, Compression ratio: 8.45634
+Network speed: 5 MB/sThroughput: 13.92155 MB/s
+Network speed: 10 MB/sThroughput: 13.92155 MB/s
+Network speed: 15 MB/sThroughput: 13.92155 MB/s
+Network speed: 20 MB/sThroughput: 13.92155 MB/s
+Cost: $ 68.47761 /TB
+
+insert | 90.0% | AdaBoost
+Accuracy: 0.66124
+Training time: 227.81161 s
+Testing time: 19.23267 s
+
+gzip
+Compression time: 4.97334 s, Compression ratio: 3.39105
+Network speed: 5 MB/sThroughput: 8.06745 MB/s
+Network speed: 10 MB/sThroughput: 8.06745 MB/s
+Network speed: 15 MB/sThroughput: 8.06745 MB/s
+Network speed: 20 MB/sThroughput: 8.06745 MB/s
+Cost: $ 65.99278 /TB
+
+lz4
+Compression time: 0.17280 s, Compression ratio: 2.01576
+Network speed: 5 MB/sThroughput: 8.06745 MB/s
+Network speed: 10 MB/sThroughput: 8.06745 MB/s
+Network speed: 15 MB/sThroughput: 8.06745 MB/s
+Network speed: 20 MB/sThroughput: 8.06745 MB/s
+Cost: $ 58.24945 /TB
+
+zstd
+Compression time: 0.18491 s, Compression ratio: 7.83143
+Network speed: 5 MB/sThroughput: 8.06745 MB/s
+Network speed: 10 MB/sThroughput: 8.06745 MB/s
+Network speed: 15 MB/sThroughput: 8.06745 MB/s
+Network speed: 20 MB/sThroughput: 8.06745 MB/s
+Cost: $ 78.60491 /TB
+
+insert | 90.0% | QDA
+Accuracy: 0.75944
+Training time: 0.42134 s
+Testing time: 2.70592 s
+
+gzip
+Compression time: 4.62640 s, Compression ratio: 3.41134
+Network speed: 5 MB/sThroughput: 17.05668 MB/s
+Network speed: 10 MB/sThroughput: 33.53766 MB/s
+Network speed: 15 MB/sThroughput: 33.53766 MB/s
+Network speed: 20 MB/sThroughput: 33.53766 MB/s
+Cost: $ 55.70773 /TB
+
+lz4
+Compression time: 0.14752 s, Compression ratio: 2.04212
+Network speed: 5 MB/sThroughput: 10.21059 MB/s
+Network speed: 10 MB/sThroughput: 20.42117 MB/s
+Network speed: 15 MB/sThroughput: 30.63176 MB/s
+Network speed: 20 MB/sThroughput: 40.84235 MB/s
+Cost: $ 52.25012 /TB
+
+zstd
+Compression time: 0.20007 s, Compression ratio: 8.67705
+Network speed: 5 MB/sThroughput: 43.38523 MB/s
+Network speed: 10 MB/sThroughput: 57.34052 MB/s
+Network speed: 15 MB/sThroughput: 57.34052 MB/s
+Network speed: 20 MB/sThroughput: 57.34052 MB/s
+Cost: $ 55.74420 /TB
+
+insert | 90.0% | MLP
+Accuracy: 0.76187
+Training time: 63.45795 s
+Testing time: 2.51538 s
+
+gzip
+Compression time: 4.53020 s, Compression ratio: 3.41137
+Network speed: 5 MB/sThroughput: 17.05683 MB/s
+Network speed: 10 MB/sThroughput: 34.11367 MB/s
+Network speed: 15 MB/sThroughput: 34.24986 MB/s
+Network speed: 20 MB/sThroughput: 34.24986 MB/s
+Cost: $ 55.53149 /TB
+
+lz4
+Compression time: 0.15839 s, Compression ratio: 2.04180
+Network speed: 5 MB/sThroughput: 10.20902 MB/s
+Network speed: 10 MB/sThroughput: 20.41805 MB/s
+Network speed: 15 MB/sThroughput: 30.62707 MB/s
+Network speed: 20 MB/sThroughput: 40.83609 MB/s
+Cost: $ 52.18385 /TB
+
+zstd
+Compression time: 0.18897 s, Compression ratio: 8.67283
+Network speed: 5 MB/sThroughput: 43.36417 MB/s
+Network speed: 10 MB/sThroughput: 61.68394 MB/s
+Network speed: 15 MB/sThroughput: 61.68394 MB/s
+Network speed: 20 MB/sThroughput: 61.68394 MB/s
+Cost: $ 55.42684 /TB
+
+insert | 90.0% | GaussianNB
+Accuracy: 0.75891
+Training time: 0.32449 s
+Testing time: 2.45219 s
+
+gzip
+Compression time: 4.50581 s, Compression ratio: 3.41140
+Network speed: 5 MB/sThroughput: 17.05701 MB/s
+Network speed: 10 MB/sThroughput: 34.11403 MB/s
+Network speed: 15 MB/sThroughput: 34.43521 MB/s
+Network speed: 20 MB/sThroughput: 34.43521 MB/s
+Cost: $ 55.47770 /TB
+
+lz4
+Compression time: 0.16006 s, Compression ratio: 2.04124
+Network speed: 5 MB/sThroughput: 10.20622 MB/s
+Network speed: 10 MB/sThroughput: 20.41243 MB/s
+Network speed: 15 MB/sThroughput: 30.61865 MB/s
+Network speed: 20 MB/sThroughput: 40.82487 MB/s
+Cost: $ 52.16095 /TB
+
+zstd
+Compression time: 0.18485 s, Compression ratio: 8.69744
+Network speed: 5 MB/sThroughput: 43.48719 MB/s
+Network speed: 10 MB/sThroughput: 63.27341 MB/s
+Network speed: 15 MB/sThroughput: 63.27341 MB/s
+Network speed: 20 MB/sThroughput: 63.27341 MB/s
+Cost: $ 55.33334 /TB
+
+insert | 90.0% | KNN
+Accuracy: 0.79782
+Training time: 1.56645 s
+Testing time: 6.56211 s
+
+gzip
+Compression time: 4.71291 s, Compression ratio: 3.40170
+Network speed: 5 MB/sThroughput: 17.00848 MB/s
+Network speed: 10 MB/sThroughput: 23.64463 MB/s
+Network speed: 15 MB/sThroughput: 23.64463 MB/s
+Network speed: 20 MB/sThroughput: 23.64463 MB/s
+Cost: $ 58.11203 /TB
+
+lz4
+Compression time: 0.16620 s, Compression ratio: 2.03212
+Network speed: 5 MB/sThroughput: 10.16059 MB/s
+Network speed: 10 MB/sThroughput: 20.32118 MB/s
+Network speed: 15 MB/sThroughput: 23.64463 MB/s
+Network speed: 20 MB/sThroughput: 23.64463 MB/s
+Cost: $ 53.66404 /TB
+
+zstd
+Compression time: 0.19408 s, Compression ratio: 8.32180
+Network speed: 5 MB/sThroughput: 23.64463 MB/s
+Network speed: 10 MB/sThroughput: 23.64463 MB/s
+Network speed: 15 MB/sThroughput: 23.64463 MB/s
+Network speed: 20 MB/sThroughput: 23.64463 MB/s
+Cost: $ 61.33239 /TB
+
+insert | 90.0% | LogisticRegression
+Accuracy: 0.75555
+Training time: 45.70817 s
+Testing time: 2.51987 s
+
+gzip
+Compression time: 4.63437 s, Compression ratio: 3.40925
+Network speed: 5 MB/sThroughput: 17.04626 MB/s
+Network speed: 10 MB/sThroughput: 33.47996 MB/s
+Network speed: 15 MB/sThroughput: 33.47996 MB/s
+Network speed: 20 MB/sThroughput: 33.47996 MB/s
+Cost: $ 55.59557 /TB
+
+lz4
+Compression time: 0.16397 s, Compression ratio: 2.03967
+Network speed: 5 MB/sThroughput: 10.19835 MB/s
+Network speed: 10 MB/sThroughput: 20.39669 MB/s
+Network speed: 15 MB/sThroughput: 30.59504 MB/s
+Network speed: 20 MB/sThroughput: 40.79338 MB/s
+Cost: $ 52.18653 /TB
+
+zstd
+Compression time: 0.18178 s, Compression ratio: 8.59279
+Network speed: 5 MB/sThroughput: 42.96393 MB/s
+Network speed: 10 MB/sThroughput: 61.57414 MB/s
+Network speed: 15 MB/sThroughput: 61.57414 MB/s
+Network speed: 20 MB/sThroughput: 61.57414 MB/s
+Cost: $ 55.38365 /TB
+
+update | 90.0% | DecisionTree
+Accuracy: 0.80629
+Training time: 5.39986 s
+Testing time: 8.93530 s
+
+gzip
+Compression time: 4.88516 s, Compression ratio: 3.30708
+Network speed: 5 MB/sThroughput: 15.81798 MB/s
+Network speed: 10 MB/sThroughput: 15.81798 MB/s
+Network speed: 15 MB/sThroughput: 15.81798 MB/s
+Network speed: 20 MB/sThroughput: 15.81798 MB/s
+Cost: $ 60.24222 /TB
+
+lz4
+Compression time: 0.15750 s, Compression ratio: 1.88442
+Network speed: 5 MB/sThroughput: 9.42210 MB/s
+Network speed: 10 MB/sThroughput: 15.81798 MB/s
+Network speed: 15 MB/sThroughput: 15.81798 MB/s
+Network speed: 20 MB/sThroughput: 15.81798 MB/s
+Cost: $ 54.58988 /TB
+
+zstd
+Compression time: 0.21672 s, Compression ratio: 4.16663
+Network speed: 5 MB/sThroughput: 15.81798 MB/s
+Network speed: 10 MB/sThroughput: 15.81798 MB/s
+Network speed: 15 MB/sThroughput: 15.81798 MB/s
+Network speed: 20 MB/sThroughput: 15.81798 MB/s
+Cost: $ 58.74415 /TB
+
+update | 90.0% | RandomForest
+Accuracy: 0.76812
+Training time: 75.60626 s
+Testing time: 9.85191 s
+
+gzip
+Compression time: 4.70968 s, Compression ratio: 3.31603
+Network speed: 5 MB/sThroughput: 14.34629 MB/s
+Network speed: 10 MB/sThroughput: 14.34629 MB/s
+Network speed: 15 MB/sThroughput: 14.34629 MB/s
+Network speed: 20 MB/sThroughput: 14.34629 MB/s
+Cost: $ 60.75290 /TB
+
+lz4
+Compression time: 0.15892 s, Compression ratio: 1.88662
+Network speed: 5 MB/sThroughput: 9.43309 MB/s
+Network speed: 10 MB/sThroughput: 14.34629 MB/s
+Network speed: 15 MB/sThroughput: 14.34629 MB/s
+Network speed: 20 MB/sThroughput: 14.34629 MB/s
+Cost: $ 54.93648 /TB
+
+zstd
+Compression time: 0.21158 s, Compression ratio: 4.16598
+Network speed: 5 MB/sThroughput: 14.34629 MB/s
+Network speed: 10 MB/sThroughput: 14.34629 MB/s
+Network speed: 15 MB/sThroughput: 14.34629 MB/s
+Network speed: 20 MB/sThroughput: 14.34629 MB/s
+Cost: $ 59.49420 /TB
+
+update | 90.0% | AdaBoost
+Accuracy: 0.64821
+Training time: 231.85216 s
+Testing time: 15.89778 s
+
+gzip
+Compression time: 4.88812 s, Compression ratio: 3.30060
+Network speed: 5 MB/sThroughput: 8.89045 MB/s
+Network speed: 10 MB/sThroughput: 8.89045 MB/s
+Network speed: 15 MB/sThroughput: 8.89045 MB/s
+Network speed: 20 MB/sThroughput: 8.89045 MB/s
+Cost: $ 64.77283 /TB
+
+lz4
+Compression time: 0.16846 s, Compression ratio: 1.88267
+Network speed: 5 MB/sThroughput: 8.89045 MB/s
+Network speed: 10 MB/sThroughput: 8.89045 MB/s
+Network speed: 15 MB/sThroughput: 8.89045 MB/s
+Network speed: 20 MB/sThroughput: 8.89045 MB/s
+Cost: $ 57.18408 /TB
+
+zstd
+Compression time: 0.23403 s, Compression ratio: 4.15729
+Network speed: 5 MB/sThroughput: 8.89045 MB/s
+Network speed: 10 MB/sThroughput: 8.89045 MB/s
+Network speed: 15 MB/sThroughput: 8.89045 MB/s
+Network speed: 20 MB/sThroughput: 8.89045 MB/s
+Cost: $ 64.46790 /TB
+
+update | 90.0% | QDA
+Accuracy: 0.75966
+Training time: 0.31916 s
+Testing time: 2.64904 s
+
+gzip
+Compression time: 4.77587 s, Compression ratio: 3.31735
+Network speed: 5 MB/sThroughput: 16.58674 MB/s
+Network speed: 10 MB/sThroughput: 29.59426 MB/s
+Network speed: 15 MB/sThroughput: 29.59426 MB/s
+Network speed: 20 MB/sThroughput: 29.59426 MB/s
+Cost: $ 56.07294 /TB
+
+lz4
+Compression time: 0.16793 s, Compression ratio: 1.88608
+Network speed: 5 MB/sThroughput: 9.43039 MB/s
+Network speed: 10 MB/sThroughput: 18.86078 MB/s
+Network speed: 15 MB/sThroughput: 28.29118 MB/s
+Network speed: 20 MB/sThroughput: 37.72157 MB/s
+Cost: $ 52.25112 /TB
+
+zstd
+Compression time: 0.20286 s, Compression ratio: 4.17241
+Network speed: 5 MB/sThroughput: 20.86206 MB/s
+Network speed: 10 MB/sThroughput: 41.72411 MB/s
+Network speed: 15 MB/sThroughput: 53.35455 MB/s
+Network speed: 20 MB/sThroughput: 53.35455 MB/s
+Cost: $ 53.55413 /TB
+
+update | 90.0% | MLP
+Accuracy: 0.75906
+Training time: 44.47335 s
+Testing time: 2.47534 s
+
+gzip
+Compression time: 4.77697 s, Compression ratio: 3.31727
+Network speed: 5 MB/sThroughput: 16.58635 MB/s
+Network speed: 10 MB/sThroughput: 29.58747 MB/s
+Network speed: 15 MB/sThroughput: 29.58747 MB/s
+Network speed: 20 MB/sThroughput: 29.58747 MB/s
+Cost: $ 55.95955 /TB
+
+lz4
+Compression time: 0.17160 s, Compression ratio: 1.88586
+Network speed: 5 MB/sThroughput: 9.42928 MB/s
+Network speed: 10 MB/sThroughput: 18.85856 MB/s
+Network speed: 15 MB/sThroughput: 28.28783 MB/s
+Network speed: 20 MB/sThroughput: 37.71711 MB/s
+Cost: $ 52.18756 /TB
+
+zstd
+Compression time: 0.22567 s, Compression ratio: 4.17403
+Network speed: 5 MB/sThroughput: 20.87017 MB/s
+Network speed: 10 MB/sThroughput: 41.74034 MB/s
+Network speed: 15 MB/sThroughput: 57.09846 MB/s
+Network speed: 20 MB/sThroughput: 57.09846 MB/s
+Cost: $ 53.43044 /TB
+
+update | 90.0% | GaussianNB
+Accuracy: 0.75920
+Training time: 0.26807 s
+Testing time: 2.38797 s
+
+gzip
+Compression time: 4.76948 s, Compression ratio: 3.31733
+Network speed: 5 MB/sThroughput: 16.58667 MB/s
+Network speed: 10 MB/sThroughput: 29.63394 MB/s
+Network speed: 15 MB/sThroughput: 29.63394 MB/s
+Network speed: 20 MB/sThroughput: 29.63394 MB/s
+Cost: $ 55.89738 /TB
+
+lz4
+Compression time: 0.16611 s, Compression ratio: 1.88612
+Network speed: 5 MB/sThroughput: 9.43060 MB/s
+Network speed: 10 MB/sThroughput: 18.86120 MB/s
+Network speed: 15 MB/sThroughput: 28.29181 MB/s
+Network speed: 20 MB/sThroughput: 37.72241 MB/s
+Cost: $ 52.15304 /TB
+
+zstd
+Compression time: 0.21907 s, Compression ratio: 4.18207
+Network speed: 5 MB/sThroughput: 20.91034 MB/s
+Network speed: 10 MB/sThroughput: 41.82067 MB/s
+Network speed: 15 MB/sThroughput: 59.18779 MB/s
+Network speed: 20 MB/sThroughput: 59.18779 MB/s
+Cost: $ 53.35698 /TB
+
+update | 90.0% | KNN
+Accuracy: 0.79730
+Training time: 1.68323 s
+Testing time: 6.33907 s
+
+gzip
+Compression time: 4.82230 s, Compression ratio: 3.30872
+Network speed: 5 MB/sThroughput: 16.54362 MB/s
+Network speed: 10 MB/sThroughput: 22.29641 MB/s
+Network speed: 15 MB/sThroughput: 22.29641 MB/s
+Network speed: 20 MB/sThroughput: 22.29641 MB/s
+Cost: $ 58.50612 /TB
+
+lz4
+Compression time: 0.16610 s, Compression ratio: 1.88489
+Network speed: 5 MB/sThroughput: 9.42446 MB/s
+Network speed: 10 MB/sThroughput: 18.84892 MB/s
+Network speed: 15 MB/sThroughput: 22.29641 MB/s
+Network speed: 20 MB/sThroughput: 22.29641 MB/s
+Cost: $ 53.62579 /TB
+
+zstd
+Compression time: 0.21006 s, Compression ratio: 4.16274
+Network speed: 5 MB/sThroughput: 20.81368 MB/s
+Network speed: 10 MB/sThroughput: 22.29641 MB/s
+Network speed: 15 MB/sThroughput: 22.29641 MB/s
+Network speed: 20 MB/sThroughput: 22.29641 MB/s
+Cost: $ 56.59350 /TB
+
+update | 90.0% | LogisticRegression
+Accuracy: 0.75387
+Training time: 45.48930 s
+Testing time: 2.49941 s
+
+gzip
+Compression time: 4.80765 s, Compression ratio: 3.31645
+Network speed: 5 MB/sThroughput: 16.58225 MB/s
+Network speed: 10 MB/sThroughput: 29.39863 MB/s
+Network speed: 15 MB/sThroughput: 29.39863 MB/s
+Network speed: 20 MB/sThroughput: 29.39863 MB/s
+Cost: $ 55.99429 /TB
+
+lz4
+Compression time: 0.16686 s, Compression ratio: 1.88619
+Network speed: 5 MB/sThroughput: 9.43097 MB/s
+Network speed: 10 MB/sThroughput: 18.86193 MB/s
+Network speed: 15 MB/sThroughput: 28.29290 MB/s
+Network speed: 20 MB/sThroughput: 37.72386 MB/s
+Cost: $ 52.19494 /TB
+
+zstd
+Compression time: 0.20505 s, Compression ratio: 4.15103
+Network speed: 5 MB/sThroughput: 20.75513 MB/s
+Network speed: 10 MB/sThroughput: 41.51026 MB/s
+Network speed: 15 MB/sThroughput: 56.54876 MB/s
+Network speed: 20 MB/sThroughput: 56.54876 MB/s
+Cost: $ 53.42097 /TB
+
