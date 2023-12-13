@@ -15,10 +15,7 @@ def remove_commas_inside_quotes(match):
 
 def read_data(name, n_clus, num_index, cate_index, delimiter):
     with open(f'./test_data/{name}.csv', encoding='utf-8') as f:
-        if name == 'econbiz':
-            raw_data = f.readlines()[1:]
-        else:
-            raw_data = f.readlines()
+        raw_data = f.readlines()
         dataset = []
         for i in range(len(raw_data)):
             pre = re.sub(r'"[^"]*"', remove_commas_inside_quotes, raw_data[i]).split(delimiter)
