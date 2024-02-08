@@ -3,7 +3,7 @@ The logical process of the program:
 2. Random split -> Random split labels
 3. Incremental k-prototypes clustering -> Clustering labels
 4. Classifiers + Clustering labels -> Classifier labels
-5. Column-wise -> Column-wise data
+5. Column-wise -> Column-wise data / Row-wise -> Row-wise data
 6. Gzip, LZ4, Zstd Compression -> Compression ratios, throughputs, costs of Random split, Incremental k-prototypes clustering and Classifiers
 
 All the original test data is stored in the "test_data" folder, all the data that generated during the process will be temporarily stored in the "data" folder, and will be deleted automatically after using.
