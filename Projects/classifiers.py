@@ -1,6 +1,8 @@
 import os
 import time
+import joblib
 import numpy as np
+import pandas as pd
 from joblib import Parallel, delayed
 from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -12,7 +14,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-def split_train_test_set(dataset, labels, train_size, test_size, case):
+
+def split_train_test_set(dataset, labels, train_size, test_size, case, name):
     indices = np.arange(len(dataset))
     features = np.array(dataset)
 
@@ -23,7 +26,6 @@ def split_train_test_set(dataset, labels, train_size, test_size, case):
         features_train, _, labels_train, _ = train_test_split(features, labels, train_size=train_size, random_state=42)
         features_test = features
         labels_test = labels
-
     elif case == 'update':
         features_same, features_diff, labels_same, labels_diff, indices_same, indices_diff = train_test_split(features, labels, indices, test_size=test_size*2, random_state=42)
         features_before, features_after, labels_before, labels_after, _, indices_after = train_test_split(features_diff, labels_diff, indices_diff, test_size=0.5, random_state=42)
@@ -32,6 +34,17 @@ def split_train_test_set(dataset, labels, train_size, test_size, case):
         labels_train = np.concatenate((labels_same, labels_before))
         labels_test = np.concatenate((labels_same, labels_after))
         indices = np.concatenate((indices_same, indices_after))
+
+    if case == 'update':
+        percentage = test_size
+    else:
+        percentage = train_size
+
+    output = pd.DataFrame(features_test)
+    output_path = f'./data/{name}/{name}_{case}_{percentage}.csv'
+    if os.path.exists(output_path):
+        os.remove(output_path)
+    output.to_csv(output_path, mode='w', index=False, header=False)
 
     return features_train, features_test, labels_train, labels_test, indices
 
@@ -48,16 +61,13 @@ def create_prediction_tasks(test_data, clf, buffer_size):
     return tasks
 
 
-def train_test_classification_models(train_data, test_data, train_labels, test_labels, name, class_name, n_clus, percentage, case, buffer_size):
+def train_test_classification_models(train_data, test_data, train_labels, test_labels, name, class_name, n_processes, percentage, case, buffer_size):
     classifiers = {
         'DecisionTree': DecisionTreeClassifier(),
-        'RandomForest': RandomForestClassifier(n_estimators=50, max_depth=10),
-        'AdaBoost': AdaBoostClassifier(estimator=DecisionTreeClassifier(max_depth=10)),
         'QDA': QuadraticDiscriminantAnalysis(),
-        'MLP': MLPClassifier(hidden_layer_sizes=(10,)),
+        'MLP': MLPClassifier(hidden_layer_sizes=(10,), max_iter=100),
         'GaussianNB': GaussianNB(),
-        'KNN': KNeighborsClassifier(),
-        'LogisticRegression': LogisticRegression()
+        'LogisticRegression': LogisticRegression(max_iter=50)
     }
 
     scaler = StandardScaler()
@@ -71,18 +81,22 @@ def train_test_classification_models(train_data, test_data, train_labels, test_l
     clf.fit(train_scaled, train_labels)
     train_end = time.time()
     train_time = train_end - train_start
+    joblib.dump(clf, f'./models/{class_name}_{case}_{percentage}.joblib')
 
     # Parallel prediction
     print(f'Testing {class_name} classifier...')
     test_start = time.time()
-    prediction_tasks = create_prediction_tasks(test_scaled, clf, buffer_size)
-    batch_predictions = Parallel(n_jobs=-1)(prediction_tasks)
+    if class_name != 'DecisionTree':
+        prediction_tasks = create_prediction_tasks(test_scaled, clf, buffer_size)
+        batch_predictions = Parallel(n_jobs=n_processes)(prediction_tasks)
+        predictions = np.concatenate(batch_predictions)
+    else:
+        predictions = clf.predict(test_scaled)
     test_end = time.time()
     test_time = test_end - test_start
-    predictions = np.concatenate(batch_predictions)
     accuracy = np.mean(predictions == np.array(test_labels))
 
-    with open(f'./results/{name}/{name}_{n_clus}_results.txt', 'a') as r:
+    with open(f'./results/{name}/{name}_results_figures.txt', 'a') as r:
         r.write(f'\n{case} | {percentage * 100}% | {class_name}\n')
         r.write(f'Accuracy: {accuracy:.5f}\n')
         r.write(f'Training time: {train_time:.5f} s\n')
@@ -93,3 +107,60 @@ def train_test_classification_models(train_data, test_data, train_labels, test_l
     #         p.write(str(predictions[j]) + '\n')
 
     return test_time, predictions
+
+
+def train_and_save_model(train_data, train_labels, name, class_name, case, percentage):
+    classifiers = {
+        'DecisionTree': DecisionTreeClassifier(),
+        'QDA': QuadraticDiscriminantAnalysis(),
+        'MLP': MLPClassifier(hidden_layer_sizes=(10,), max_iter=100),
+        'GaussianNB': GaussianNB(),
+        'LogisticRegression': LogisticRegression(max_iter=50)
+    }
+
+    scaler = StandardScaler()
+    train_scaled = scaler.fit_transform(train_data)
+
+    clf = classifiers[class_name]
+
+    # Training
+    print(f'Training {class_name} classifier...')
+    train_start = time.time()
+    clf.fit(train_scaled, train_labels)
+    train_end = time.time()
+    train_time = train_end - train_start
+
+    # Saving the trained model
+    if not os.path.exists(f'./models/{name}'):
+        os.makedirs(f'./models/{name}')
+    model_path = f'./models/{name}/{class_name}_{case}_{percentage}.joblib'
+    scaler_path = f'./models/{name}/{class_name}_{case}_{percentage}_scaler.joblib'
+    if os.path.exists(model_path):
+        os.remove(model_path)
+    joblib.dump(clf, model_path)
+    if os.path.exists(scaler_path):
+        os.remove(scaler_path)
+    joblib.dump(scaler, scaler_path)
+    print(f"Saved {class_name} classifier to {model_path}")
+
+    return model_path, scaler_path, train_time
+
+
+def load_and_test_model(test_data, test_labels, model_path, scaler_path):
+    # Load the model
+    clf = joblib.load(model_path)
+    scaler = joblib.load(scaler_path)
+    test_scaled = scaler.transform(test_data)
+
+    # Testing
+    print(f'Testing {model_path}...')
+    test_start = time.time()
+    predictions = clf.predict(test_scaled)
+    test_end = time.time()
+    test_time = test_end - test_start
+
+    accuracy = np.mean(predictions == np.array(test_labels))
+
+    # You can include code here to write results to files if needed
+
+    return test_time, accuracy, predictions

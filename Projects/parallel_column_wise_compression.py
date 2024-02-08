@@ -38,10 +38,11 @@ def compress_column(column_data, format):
     return compressed_size
 
 
-def parallel_column_wise_compression(data, data_path, format, n_processes):
+def parallel_column_wise_compression(n_clus, data_path, labels, format, delimiter):
+    data = column_wise_split(n_clus, data_path, labels, delimiter)
     tasks = [(cluster[column_index], format) for cluster in data for column_index in range(len(cluster))]
     start_time = time.time()
-    results = Parallel(n_jobs=n_processes)(delayed(compress_column)(*task) for task in tasks)
+    results = Parallel(n_jobs=n_clus)(delayed(compress_column)(*task) for task in tasks)
     end_time = time.time()
     original_size = os.stat(data_path).st_size
 
@@ -51,22 +52,3 @@ def parallel_column_wise_compression(data, data_path, format, n_processes):
 
     return original_size, compressed_size, compression_ratio, compression_time
 
-
-name = 'DS_001'
-num_indexs = [0, 5]
-cate_indexs = [3, 6]
-n_clus = 5
-test_data_path = f'./test_data/{name}.csv'
-dataset = read_data(name, n_clus, num_indexs, cate_indexs, '|')
-t_clus, clus_labels = incremental_k_prototypes(dataset, n_clus, num_indexs, cate_indexs, name)
-data = column_wise_split(n_clus, test_data_path, clus_labels, '|')
-n_processors_list = [1, 2, 5, 10]
-print(f"Total Original Size: 155.15867 MB")
-for n_processors in n_processors_list:
-    print(f"Number of processors: {n_processors}")
-    for format in ('gzip', 'lz4', 'zstd'):
-        original_size, compressed_size, compression_ratio, compression_time = parallel_column_wise_compression(data, test_data_path, format, n_processors)
-        print(f"Compression Format: {format}")
-        print(f"Total Compressed Size: {compressed_size/(1024*1024):.5f} MB")
-        print(f"Compression Ratio: {compression_ratio:.5f}")
-        print(f"Compression time: {compression_time:.5f} s")

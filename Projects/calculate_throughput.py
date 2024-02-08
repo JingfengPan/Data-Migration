@@ -8,18 +8,16 @@ def calculate_throughput(t_class, t_comp, comp_ratio, network_speed, path):
     class_throughput = data_size / t_class
     comp_throughput = data_size / t_comp
     network_throughput = network_speed * comp_ratio
-    # throughput = min(class_throughput, comp_throughput, network_throughput)
     if class_throughput < comp_throughput:
         throughput = class_throughput
-        bottleneck = 'class'
+        bottleneck = 'classification'
     else:
         throughput = comp_throughput
-        bottleneck = 'computation'
+        bottleneck = 'compression'
     if network_throughput < throughput:
         throughput = network_throughput
-        bottleneck = 'network'
-    print(f"The bottleneck is {bottleneck} with a throughput of {throughput}.")
-    return throughput
+        bottleneck = 'network speed'
+    return throughput, bottleneck
 
 
 '''

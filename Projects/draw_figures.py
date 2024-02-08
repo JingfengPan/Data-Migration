@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 
 def draw_figures(output_list, file_name):
-    network_speeds = [4, 8, 12, 16, 20]
-    names = ['DecisionTree', 'RandomForest', 'AdaBoost', 'QDA', 'MLP', 'GaussianNB', 'KNN', 'LogisticRegression', 'RandomSplit', 'KPrototypes']
+    network_speeds = [5, 10, 15, 20]
+    names = ['DecisionTree', 'QDA', 'MLP', 'GaussianNB', 'LogisticRegression', 'RandomSplit', 'KPrototypes']  # 'RandomForest', 'AdaBoost', 'KNN'
 
     font = {'size': 16}
     matplotlib.rc('font', **font)

@@ -13,7 +13,7 @@ def remove_commas_inside_quotes(match):
 # partsupp: num_index = [0, 1, 2, 3], cate_index = []
 
 
-def read_data(name, n_clus, num_index, cate_index, delimiter):
+def read_data(name, num_index, cate_index, delimiter):
     with open(f'./test_data/{name}.csv', encoding='utf-8') as f:
         raw_data = f.readlines()
         dataset = []
@@ -59,7 +59,9 @@ def read_data(name, n_clus, num_index, cate_index, delimiter):
                 cate_list.append(pre[j])
             dataset.append(num_list + cate_list)
         # output = pd.DataFrame(dataset)
-        # if os.path.exists(f'./test_data/{name}/{name}_{n_clus}_preprocess.csv'):
-        #     os.remove(f'./test_data/{name}/{name}_{n_clus}_preprocess.csv')
-        # output.to_csv(f'./test_data/{name}/{name}_{n_clus}_preprocess.csv', mode='a', index=False, header=False)
+        # if not os.path.exists(f'./test_data/{name}'):
+        #     os.makedirs(f'./test_data/{name}')
+        # if os.path.exists(f'./test_data/{name}/{name}_preprocess.csv'):
+        #     os.remove(f'./test_data/{name}/{name}_preprocess.csv')
+        # output.to_csv(f'./test_data/{name}/{name}_preprocess.csv', mode='a', index=False, header=False)
     return dataset

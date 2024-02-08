@@ -15,7 +15,7 @@ def random_split(dataset, n_clus, name):
     # if os.path.exists(f'./test_data/{name}/{name}_{n_clus}_random_labels.csv'):
     #     os.remove(f'./test_data/{name}/{name}_{n_clus}_random_labels.csv')
     # output.to_csv(f'./test_data/{name}/{name}_{n_clus}_random_labels.csv', mode='w', index=False, header=False)
-    with open(f'./results/{name}/{name}_{n_clus}_results.txt', 'a') as r:
+    with open(f'./results/{name}/{name}_results.txt', 'a') as r:
         r.write(f'\nRandom Split\n')
         r.write(f'Random split time: {t_random_split:.5f} s\n')
     return t_random_split, clusters

@@ -17,7 +17,7 @@ from joblib import delayed, Parallel
 # cluster_size = max size of each cluster
 
 
-def incremental_k_prototypes(dataset, n_clus, nums, cates, name, buffer_size=10000):
+def incremental_k_prototypes(dataset, n_clus, nums, cates, buffer_size, name):
     num_index = []
     cate_index = []
     for i in range(len(nums)):
@@ -56,9 +56,9 @@ def incremental_k_prototypes(dataset, n_clus, nums, cates, name, buffer_size=100
     t_clus = clus_end - clus_start
     # print('Clustering Time (s):', t_clus)
 
-    # with open(f'./results/{name}/{name}_{n_clus}_results.txt', 'a') as r:
-    #     r.write(f'Online Clustering\n')
-    #     r.write(f'Clustering time: {t_clus:.5f} s\n')
+    with open(f'./results/{name}/{name}_results.txt', 'a') as r:
+        r.write(f'Online Clustering\n')
+        r.write(f'Clustering time: {t_clus:.5f} s\n')
     return t_clus, output
 
 
