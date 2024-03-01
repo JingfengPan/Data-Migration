@@ -5,8 +5,6 @@ from joblib import Parallel, delayed
 import gzip
 import lz4.frame
 import zstandard as zstd
-from incremental_k_prototypes import incremental_k_prototypes
-from preprocess_data import read_data
 
 
 def column_wise_split(n_clus, data_path, labels, delimiter):

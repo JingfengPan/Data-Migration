@@ -1,7 +1,8 @@
 import os
 import re
-from datetime import datetime
+import numpy as np
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 
 
 def remove_commas_inside_quotes(match):
@@ -14,9 +15,11 @@ def remove_commas_inside_quotes(match):
 
 
 def read_data(name, num_index, cate_index, delimiter):
-    with open(f'./test_data/{name}.csv', encoding='utf-8') as f:
+    with open(f'./datasets/{name}.csv', encoding='utf-8') as f:
         raw_data = f.readlines()
-        dataset = []
+        num_data = []  # To collect numerical data
+        cate_data = []  # To collect categorical data
+
         for i in range(len(raw_data)):
             pre = re.sub(r'"[^"]*"', remove_commas_inside_quotes, raw_data[i]).split(delimiter)
 
@@ -51,17 +54,28 @@ def read_data(name, num_index, cate_index, delimiter):
                     pre[2] = 2
                 pre[6] = int(pre[6][10:])
 
-            num_list = []
-            for j in num_index:
-                num_list.append(float(pre[j]))
-            cate_list = []
-            for j in cate_index:
-                cate_list.append(pre[j])
-            dataset.append(num_list + cate_list)
-        # output = pd.DataFrame(dataset)
-        # if not os.path.exists(f'./test_data/{name}'):
-        #     os.makedirs(f'./test_data/{name}')
-        # if os.path.exists(f'./test_data/{name}/{name}_preprocess.csv'):
-        #     os.remove(f'./test_data/{name}/{name}_preprocess.csv')
-        # output.to_csv(f'./test_data/{name}/{name}_preprocess.csv', mode='a', index=False, header=False)
-    return dataset
+            # Collecting numerical and categorical data separately
+            num_list = [pre[j] for j in num_index]
+            cate_list = [pre[j] for j in cate_index]
+            num_data.append(num_list)
+            cate_data.append(cate_list)
+
+        # Convert lists to numpy arrays for processing
+        num_features = np.array(num_data)
+        cate_features = np.array(cate_data)
+
+        # Scale the numerical features
+        scaler = StandardScaler()
+        num_scaled = scaler.fit_transform(num_features)
+
+        # Combine scaled numerical and original categorical features
+        pre_dataset = np.hstack((num_scaled, cate_features))
+
+        output = pd.DataFrame(pre_dataset)
+        if not os.path.exists(f'./pre_datasets'):
+            os.makedirs(f'./pre_datasets')
+        if os.path.exists(f'./pre_datasets/{name}_preprocess.csv'):
+            os.remove(f'./pre_datasets/{name}_preprocess.csv')
+        output.to_csv(f'./pre_datasets/{name}_preprocess.csv', mode='a', index=False, header=False)
+
+    return pre_dataset

@@ -40,11 +40,20 @@ def split_train_test_set(dataset, labels, train_size, test_size, case, name):
     else:
         percentage = train_size
 
-    output = pd.DataFrame(features_test)
-    output_path = f'./data/{name}/{name}_{case}_{percentage}.csv'
-    if os.path.exists(output_path):
-        os.remove(output_path)
-    output.to_csv(output_path, mode='w', index=False, header=False)
+    if not os.path.exists(f'./data/{name}_10'):
+        os.makedirs(f'./data/{name}_10')
+
+    indices_output = pd.DataFrame(indices)
+    indices_output_path = f'./data/{name}_10/{name}_{case}_{percentage}_indices.csv'
+    if os.path.exists(indices_output_path):
+        os.remove(indices_output_path)
+    indices_output.to_csv(indices_output_path, mode='w', index=False, header=False)
+
+    features_test_output = pd.DataFrame(features_test)
+    features_test_output_path = f'./data/{name}_10/{name}_{case}_{percentage}.csv'
+    if os.path.exists(features_test_output_path):
+        os.remove(features_test_output_path)
+    features_test_output.to_csv(features_test_output_path, mode='w', index=False, header=False)
 
     return features_train, features_test, labels_train, labels_test, indices
 
@@ -65,9 +74,9 @@ def train_test_classification_models(train_data, test_data, train_labels, test_l
     classifiers = {
         'DecisionTree': DecisionTreeClassifier(),
         'QDA': QuadraticDiscriminantAnalysis(),
-        'MLP': MLPClassifier(hidden_layer_sizes=(10,), max_iter=100),
+        'MLP': MLPClassifier(),  # hidden_layer_sizes=(10,), max_iter=100
         'GaussianNB': GaussianNB(),
-        'LogisticRegression': LogisticRegression(max_iter=50)
+        'LogisticRegression': LogisticRegression()  # max_iter=50
     }
 
     scaler = StandardScaler()
@@ -113,54 +122,43 @@ def train_and_save_model(train_data, train_labels, name, class_name, case, perce
     classifiers = {
         'DecisionTree': DecisionTreeClassifier(),
         'QDA': QuadraticDiscriminantAnalysis(),
-        'MLP': MLPClassifier(hidden_layer_sizes=(10,), max_iter=100),
+        'MLP': MLPClassifier(),  # hidden_layer_sizes=(10,), max_iter=100
         'GaussianNB': GaussianNB(),
-        'LogisticRegression': LogisticRegression(max_iter=50)
+        'LogisticRegression': LogisticRegression()  # max_iter=50
     }
-
-    scaler = StandardScaler()
-    train_scaled = scaler.fit_transform(train_data)
 
     clf = classifiers[class_name]
 
     # Training
     print(f'Training {class_name} classifier...')
     train_start = time.time()
-    clf.fit(train_scaled, train_labels)
+    clf.fit(train_data, train_labels)
     train_end = time.time()
     train_time = train_end - train_start
 
     # Saving the trained model
-    if not os.path.exists(f'./models/{name}'):
-        os.makedirs(f'./models/{name}')
-    model_path = f'./models/{name}/{class_name}_{case}_{percentage}.joblib'
-    scaler_path = f'./models/{name}/{class_name}_{case}_{percentage}_scaler.joblib'
+    if not os.path.exists(f'./models/{name}_10'):
+        os.makedirs(f'./models/{name}_10')
+    model_path = f'./models/{name}_10/{class_name}_{case}_{percentage}.joblib'
     if os.path.exists(model_path):
         os.remove(model_path)
     joblib.dump(clf, model_path)
-    if os.path.exists(scaler_path):
-        os.remove(scaler_path)
-    joblib.dump(scaler, scaler_path)
     print(f"Saved {class_name} classifier to {model_path}")
 
-    return model_path, scaler_path, train_time
+    return model_path, train_time
 
 
-def load_and_test_model(test_data, test_labels, model_path, scaler_path):
+def load_and_test_model(test_data, test_labels, model_path):
     # Load the model
     clf = joblib.load(model_path)
-    scaler = joblib.load(scaler_path)
-    test_scaled = scaler.transform(test_data)
 
     # Testing
     print(f'Testing {model_path}...')
     test_start = time.time()
-    predictions = clf.predict(test_scaled)
+    predictions = clf.predict(test_data)
     test_end = time.time()
     test_time = test_end - test_start
 
     accuracy = np.mean(predictions == np.array(test_labels))
-
-    # You can include code here to write results to files if needed
 
     return test_time, accuracy, predictions

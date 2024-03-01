@@ -15,8 +15,6 @@ from joblib import delayed, Parallel
 # path = path of the dataset
 # n_data = amount of data to process each time, simulate the form of data stream
 # cluster_size = max size of each cluster
-
-
 def incremental_k_prototypes(dataset, n_clus, nums, cates, buffer_size, name):
     num_index = []
     cate_index = []
@@ -56,9 +54,9 @@ def incremental_k_prototypes(dataset, n_clus, nums, cates, buffer_size, name):
     t_clus = clus_end - clus_start
     # print('Clustering Time (s):', t_clus)
 
-    with open(f'./results/{name}/{name}_results.txt', 'a') as r:
-        r.write(f'Online Clustering\n')
-        r.write(f'Clustering time: {t_clus:.5f} s\n')
+    # with open(f'./results/{name}/{name}_results.txt', 'a') as r:
+    #     r.write(f'Online Clustering\n')
+    #     r.write(f'Clustering time: {t_clus:.5f} s\n')
     return t_clus, output
 
 
@@ -113,4 +111,3 @@ def update_centroids(n_clus, centroids, data, clusters, cate_index, num_index):
                 centroids[j][cate_index[i]] = list(Counter(cate[j]).keys())[0]
             else:
                 centroids[j][cate_index[i]] = 0
-
