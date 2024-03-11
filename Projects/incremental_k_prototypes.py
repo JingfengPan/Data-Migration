@@ -25,8 +25,7 @@ def incremental_k_prototypes(dataset, n_clus, nums, cates, buffer_size, name):
 
     clus_start = time.time()
 
-    for i in range(n_clus):
-        samples = random.sample(range(buffer_size), n_clus)
+    samples = random.sample(range(buffer_size), n_clus)
     centroids = []
     for i in range(len(samples)):
         centroids.append(dataset[:buffer_size][samples[i]])
