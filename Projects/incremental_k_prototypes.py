@@ -12,9 +12,6 @@ from joblib import delayed, Parallel
 # cate_index = index list of columns of category data
 # num_index = index list of columns of numeric data
 # name = output file name
-# path = path of the dataset
-# n_data = amount of data to process each time, simulate the form of data stream
-# cluster_size = max size of each cluster
 def incremental_k_prototypes(dataset, n_clus, nums, cates, buffer_size, name):
     num_index = []
     cate_index = []
