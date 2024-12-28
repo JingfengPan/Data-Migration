@@ -1,6 +1,5 @@
 import os
 
-
 def cost_model(
         classification_time: float,
         compression_time: float,
